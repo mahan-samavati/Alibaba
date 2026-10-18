@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'UserProfile',
     'Residence',
     'Reserve',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -149,7 +150,8 @@ REST_FRAMEWORK = {
     'DEFAULT_THROTTLE_RATES': {
         'anon': '50/hour',
         'user': '1000/day'
-    }
+    },
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 SIMPLE_JWT = {
@@ -158,3 +160,8 @@ SIMPLE_JWT = {
 }
 
 AUTH_USER_MODEL = "UserProfile.User"
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Alibaba',
+    'VERSION': '1.0.0',
+}
